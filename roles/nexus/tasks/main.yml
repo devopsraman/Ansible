@@ -1,1 +1,7 @@
 
+---
+
+- include: proxy.yml
+- include: config.yml
+- include: service.yml
+- include: autocfg.yml
