@@ -1,0 +1,23 @@
+---
+
+- name: Setup Apache Config
+  copy: >
+    src=httpd.conf
+    dest=/etc/httpd/conf/httpd.conf
+    mode=0644
+  notify:
+   - reload httpd
+
+- name: Create httpd
+  file: >
+    path=/var/run/httpd
+    state=directory
+    mode=0755
+    owner=root
+    group=root
+
+- name: Setup Apache icons soft-link
+  file: >
+    src=/usr/share/httpd/icons
+    dest=/var/www/html/icons
+    state=link
