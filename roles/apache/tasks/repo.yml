@@ -1,0 +1,6 @@
+---
+
+- name: Update EPEL repo location
+  get_url:
+    url: http://reponame
+    dest: /etc/yum.repos.d
