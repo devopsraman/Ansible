@@ -1,0 +1,16 @@
+---
+
+- name: Setup NVH
+  copy: >
+    src=NVH-std.conf
+    dest=/etc/httpd/conf.d/000-NVH.conf
+    mode=0444
+
+- name: Setup vhost
+  template: >
+    src=vhost-std.conf
+    dest=/etc/httpd/conf.d/{{ vhost_priority }}-{{ vhost }}.conf
+    mode=0444
+  notify:
+   - reload systemd
+   - reload httpd
