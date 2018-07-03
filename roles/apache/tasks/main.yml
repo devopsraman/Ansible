@@ -1,1 +1,8 @@
 
+---
+
+- include: repo.yml
+- include: packages.yml
+- include: config.yml
+- include: vhost.yml
+- include: service.yml
