@@ -1,0 +1,7 @@
+---
+
+- name: Reload service
+  shell: systemctl daemon-reload
+
+- name: Start service
+  service: name=httpd state=started enabled=yes
