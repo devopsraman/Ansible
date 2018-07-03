@@ -1,0 +1,11 @@
+---
+
+- name: Install packages
+  yum: name={{ item }} state=present
+  with_items:
+  - httpd
+  - openssl
+  - php
+
+- name: Setup php timezone
+  copy: src=php.timezone dest=/etc/php.d/timezone.ini
